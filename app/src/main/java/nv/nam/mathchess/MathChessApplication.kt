@@ -19,6 +19,18 @@ import org.koin.core.context.GlobalContext.startKoin
 import org.koin.dsl.module
 
 class MathChessApplication : Application(), ImageLoaderFactory {
+    private val appModule = module {
+        single<HttpClient> {
+            HttpClient(CIO) {
+                expectSuccess = true
+                install(Logging){
+                    logger = Logger.DEFAULT
+                    level = LogLevel.HEADERS
+                    sanitizeHeader { header -> header == HttpHeaders.Authorization }
+                }
+            }
+        }
+    }
     override fun onCreate() {
         super.onCreate()
         startKoin {
@@ -34,18 +46,5 @@ class MathChessApplication : Application(), ImageLoaderFactory {
             ).diskCache(
                 DiskCache.Builder().maxSizePercent(0.05).directory(cacheDir).build()
             ).allowHardware(true).logger(DebugLogger()).build()
-    }
-}
-
-val appModule = module {
-    single<HttpClient> {
-        HttpClient(CIO) {
-            expectSuccess = true
-            install(Logging){
-                logger = Logger.DEFAULT
-                level = LogLevel.HEADERS
-                sanitizeHeader { header -> header == HttpHeaders.Authorization }
-            }
-        }
     }
 }
