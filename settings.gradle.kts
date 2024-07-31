@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Math Chess"
 include(":app")
- 
+include(":app:data")
+include(":app:domain")
