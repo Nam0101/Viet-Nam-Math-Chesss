@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
-
         if (savedInstanceState == null) {
             openLoginFragment()
         }
