@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Math Chess</string>
+    <string name="vn_math_chess">VN Math Chess</string>
+    <string name="ng_nh_p_v_i_facebook">Đăng nhập với Facebook</string>
+    <string name="ng_nh_p_b_ng_google">Đăng nhập bằng Google</string>
+    <string name="ho_c_nh_p_v_i">hoặc nhập với</string>
+    <string name="t_n_ng_i_d_ng_ho_c_th_i_n_t">Tên người dùng hoặc thư điện tử</string>
+    <string name="m_t_kh_u">Mật khẩu</string>
+    <string name="ng_nh_p">Đăng nhập</string>
+    <string name="qu_n_t_l_i_m_t_kh_u">Quên/Đặt lại mật khẩu?</string>
 </resources>

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.devtools.ksp") version "2.0.0-1.0.23"
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -65,5 +66,6 @@ dependencies {
     implementation(libs.ktor.client.auth)
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.gson)
-
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 }
